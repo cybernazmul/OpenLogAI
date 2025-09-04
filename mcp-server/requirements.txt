@@ -1,0 +1,17 @@
+# FastMCP 2.0 for HTTP streaming MCP server
+fastmcp>=2.11.0
+
+# OpenSearch and core dependencies
+opensearch-py>=2.4.0
+pydantic>=2.5.0
+pydantic-settings>=2.6.1
+
+# Utilities
+aiofiles>=23.0.0
+httpx>=0.26.0
+pyyaml>=6.0
+python-json-logger>=2.0.0
+
+# Optional: For development and monitoring
+python-multipart>=0.0.6
+prometheus-client>=0.19.0
