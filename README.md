@@ -69,9 +69,16 @@
           ┌───────────────────────┼───────────────────────┐
           │                       │                       │
 ┌─────────▼──────────┐  ┌─────────▼──────────┐  ┌─────────▼──────────┐
-│   MCP HTTP Server  │  │ OpenSearch Dashboard│  │   Direct API       │
-│  (AI Integration)  │  │   (Visualizations)  │  │    (REST/SQL)      │
-└────────────────────┘  └────────────────────┘  └────────────────────┘
+│   MCP HTTP Server  │  │ OpenSearch Dashboard│ │   Direct API       │
+│  (AI Integration)  │  │   (Visualizations)  │ │    (REST/SQL)      │
+└──────────|─────────┘  └────────────────────┘  └────────────────────┘
+           | 
+           |
+┌─────────▼──────────┐
+│   Claud Desktop    │  
+│  (AI Integration)  │  
+└────────────────────┘
+
 ```
 
 ---
@@ -85,8 +92,8 @@
 
 ### 1. Clone and Configure
 ```bash
-git clone <your-repository>
-cd opensearch
+git clone https://github.com/cybernazmul/OpenLogAI.git
+cd OpenLogAi
 cp .env_example .env
 # Edit .env with your settings
 ```
@@ -100,6 +107,22 @@ docker-compose up -d
 docker-compose ps
 docker-compose logs -f
 ```
+
+### Claude Desktop Integration
+```json
+{
+  "mcpServers": {
+    "opensearch-logs": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "http://YOUR_SERVER_IP:8000/mcp"
+      ]
+    }
+  }
+}
+```
+
 
 ### 3. Access Services
 | Service | URL | Purpose |
