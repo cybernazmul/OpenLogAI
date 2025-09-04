@@ -94,6 +94,7 @@ services:
       - 5044:5044      # Beats input
     environment:
       - LS_JAVA_OPTS=-Xmx512m -Xms512m
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
     volumes:
       - ./logstash/config:/usr/share/logstash/config
       - ./logstash/pipeline:/usr/share/logstash/pipeline:ro
@@ -121,7 +122,7 @@ services:
     environment:
       - OS_URL=${OS_URL:-https://opensearch-node1:9200}
       - OS_USERNAME=${OS_USERNAME:-admin}
-      - OS_PASSWORD=${OS_PASSWORD:-${OPENSEARCH_INITIAL_ADMIN_PASSWORD}}
+      - OS_PASSWORD=${OPENSEARCH_INITIAL_ADMIN_PASSWORD}
       - MCP_HOST=${MCP_HOST:-0.0.0.0}
       - MCP_PORT=${MCP_PORT:-8000}
       - MCP_PATH=${MCP_PATH:-/mcp}

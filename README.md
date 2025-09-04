@@ -108,7 +108,7 @@ docker-compose ps
 docker-compose logs -f
 ```
 
-### Claude Desktop Integration
+### 3. Claude Desktop Integration
 ```json
 {
   "mcpServers": {
@@ -124,7 +124,7 @@ docker-compose logs -f
 ```
 
 
-### 3. Access Services
+### 4. Access Services
 | Service | URL | Purpose |
 |---------|-----|---------|
 | 🔍 OpenSearch API | https://localhost:9200 | Direct search and admin |
@@ -132,7 +132,7 @@ docker-compose logs -f
 | 🤖 MCP Server | http://localhost:8000 | AI integration endpoint |
 | 📈 Logstash API | http://localhost:9600 | Pipeline monitoring |
 
-### 4. Test Log Collection
+### 5. Test Log Collection
 ```bash
 # Test syslog ingestion
 logger "Test message from $(hostname)"
